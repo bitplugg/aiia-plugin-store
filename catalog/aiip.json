@@ -12,6 +12,7 @@
     "sha256": "379491a29f2b32f92896dc5f98ac4c3e9f96328e8a881beeeca380986cee3367",
     "sizeBytes": 7139,
     "signerSha256": [],
+    "manifestSha256": null,
     "manifest": null,
     "source": "src/aiip/base64-codec"
   },
@@ -28,6 +29,7 @@
     "sha256": "5d9f1e890e2d7b3c9e96ec21e6d7a468ee44fc188fcc21f6140b3e7763653857",
     "sizeBytes": 7144,
     "signerSha256": [],
+    "manifestSha256": null,
     "manifest": null,
     "source": "src/aiip/color-tool"
   },
@@ -44,6 +46,7 @@
     "sha256": "df7f2232e9c2f67dbdbaa121b03f5987b5525d1176168d3f48379b09e49a6c76",
     "sizeBytes": 7149,
     "signerSha256": [],
+    "manifestSha256": null,
     "manifest": null,
     "source": "src/aiip/datetime-tool"
   },
@@ -60,6 +63,7 @@
     "sha256": "41959216e56ace9ff38fa5c314808e649a1e639791e40bd7d1ce624ea69228a5",
     "sizeBytes": 7132,
     "signerSha256": [],
+    "manifestSha256": null,
     "manifest": null,
     "source": "src/aiip/hash-tool"
   },
@@ -76,6 +80,7 @@
     "sha256": "56355a24fccb91397e8b8e6ed43feb1749b012c7877a8cde51b61ea83aa29505",
     "sizeBytes": 7170,
     "signerSha256": [],
+    "manifestSha256": null,
     "manifest": null,
     "source": "src/aiip/json-summary"
   },
@@ -92,6 +97,7 @@
     "sha256": "8f4759f1d94a2badf4a0cc88ddaf0bd008892e071cdb209fa87a08f7d31f75ce",
     "sizeBytes": 7125,
     "signerSha256": [],
+    "manifestSha256": null,
     "manifest": null,
     "source": "src/aiip/text-lower"
   },
@@ -108,6 +114,7 @@
     "sha256": "ef44e64d2875c5c967eb6791d379f9966226e79bcc1573264dcfb632ad1cf81c",
     "sizeBytes": 7160,
     "signerSha256": [],
+    "manifestSha256": null,
     "manifest": null,
     "source": "src/aiip/text-reverse"
   },
@@ -124,6 +131,7 @@
     "sha256": "9ab78d3e9fb12c5d68cd80de35784849a707b27b1036c23661d6008d85e6a08c",
     "sizeBytes": 7126,
     "signerSha256": [],
+    "manifestSha256": null,
     "manifest": null,
     "source": "src/aiip/text-upper"
   },
@@ -140,6 +148,7 @@
     "sha256": "967c32f576acaea6706199f142ced69757a13222292326bd47dda41acf7bcf3d",
     "sizeBytes": 7148,
     "signerSha256": [],
+    "manifestSha256": null,
     "manifest": null,
     "source": "src/aiip/url-summary"
   },
@@ -156,6 +165,7 @@
     "sha256": "c1a2f94cb451a96056f949c6554e2cbef79e2a62f782fb6dd52d17f0b04f1d60",
     "sizeBytes": 7128,
     "signerSha256": [],
+    "manifestSha256": null,
     "manifest": null,
     "source": "src/aiip/word-count"
   }

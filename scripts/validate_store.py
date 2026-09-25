@@ -74,6 +74,10 @@ def main() -> None:
             sidecar = artifact.with_suffix(".manifest.json")
             if not sidecar.is_file():
                 fail(f"missing sidecar {sidecar}")
+            if not item.get("manifestSha256"):
+                fail(f"missing manifest sha256 for {item['slug']}")
+            if hashlib.sha256(sidecar.read_bytes()).hexdigest().lower() != item["manifestSha256"].lower():
+                fail(f"manifest sha256 mismatch for {item['slug']}")
             validate_manifest(read_json(sidecar), item["id"], item["entryClass"])
             plugin_dex = artifact.read_bytes()
         if not plugin_dex.startswith(b"dex\n"):

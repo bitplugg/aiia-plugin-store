@@ -12,6 +12,7 @@
     "sha256": "e8ab2f961933ae1f708f36fe9a74021c55e5c29f2ff590d317ee6864ea4134aa",
     "sizeBytes": 13140,
     "signerSha256": [],
+    "manifestSha256": "3e93326375d608456626f1a5708d2c7f208869f3e9515164b617cb5cd247de4d",
     "manifest": "releases/dex/contact-mask.manifest.json",
     "source": "src/dex/contact-mask"
   },
@@ -28,6 +29,7 @@
     "sha256": "3b940b0ec77b8d23cf533f6726b1f27c26c41e94cf7f933aa57d2d6393c59256",
     "sizeBytes": 13152,
     "signerSha256": [],
+    "manifestSha256": "145d6da9315f999d8251ea88996c0afa0ea6acb1a1e444fdc371daadd251be1d",
     "manifest": "releases/dex/length-converter.manifest.json",
     "source": "src/dex/length-converter"
   },
@@ -44,6 +46,7 @@
     "sha256": "999fe301db8b266cbbd99f93ba5055277b59e3d6fb21b1f08c4f0be108d4b07e",
     "sizeBytes": 13164,
     "signerSha256": [],
+    "manifestSha256": "697a32fc57505a189c4b29edb11bdf1c553602f98d6166faae292ff7412ec87b",
     "manifest": "releases/dex/markdown-cleaner.manifest.json",
     "source": "src/dex/markdown-cleaner"
   },
@@ -60,6 +63,7 @@
     "sha256": "cdd8f725d66a40b63bf29b55553749a9a1fd60da93b25fa0448ceff3e6fabb7f",
     "sizeBytes": 13140,
     "signerSha256": [],
+    "manifestSha256": "c5b8796fad689844af1335f780df7dbc300cb27854e742d7d5dd2f47c726fa21",
     "manifest": "releases/dex/number-stats.manifest.json",
     "source": "src/dex/number-stats"
   },
@@ -76,6 +80,7 @@
     "sha256": "3e85cd22572e36ec5208eeb0b49f7c8fa0ade28869f32d28668b94b7cb25aa2a",
     "sizeBytes": 13172,
     "signerSha256": [],
+    "manifestSha256": "ee4dc5bf09daa3c8abea98d710c3c5d40553af51c6334ea0a3e76a2fbdc08c0a",
     "manifest": "releases/dex/password-generator.manifest.json",
     "source": "src/dex/password-generator"
   },
@@ -92,6 +97,7 @@
     "sha256": "ffefce8797de170724da2b7fc9694bbed461382aec2c322552ce0b64b3e408d5",
     "sizeBytes": 13140,
     "signerSha256": [],
+    "manifestSha256": "78212147106b036a74f9af32f4b6e47a0124f686abf68e23d86c577ce557ad98",
     "manifest": "releases/dex/random-choice.manifest.json",
     "source": "src/dex/random-choice"
   },
@@ -108,6 +114,7 @@
     "sha256": "dfd0fc322a8e37d66c2942f87edd916fc8aa39b765c4e5f17903639e19004d57",
     "sizeBytes": 13112,
     "signerSha256": [],
+    "manifestSha256": "0725b8a2e2cf826d42599b473ae0f49366b8dc2a491d054806b61626de492992",
     "manifest": "releases/dex/slugify.manifest.json",
     "source": "src/dex/slugify"
   },
@@ -124,6 +131,7 @@
     "sha256": "425e192028b918ad48a8c141011f9d6afe33dd747ab7b942fa62f08f1793f2e0",
     "sizeBytes": 13188,
     "signerSha256": [],
+    "manifestSha256": "53ec0c0adbb6cc8f771eec91c5b069dcf60013cde6e6158d32c87d283360f84f",
     "manifest": "releases/dex/temperature-converter.manifest.json",
     "source": "src/dex/temperature-converter"
   },
@@ -140,6 +148,7 @@
     "sha256": "97127f9bcaa14b6b98057234abac540e96fbd4e58bd84019d1da455cef531a2d",
     "sizeBytes": 13144,
     "signerSha256": [],
+    "manifestSha256": "8054f28463b1600ed042bd424153046c3a13eb4bac9be10a67269fd33f03e6ca",
     "manifest": "releases/dex/text-profile.manifest.json",
     "source": "src/dex/text-profile"
   },
@@ -156,6 +165,7 @@
     "sha256": "25d810637c184ec147b43625ed3e9efc2c411c2bbf76a6cb0f7d0e855c5b9ed4",
     "sizeBytes": 13152,
     "signerSha256": [],
+    "manifestSha256": "2f76cd3837979695a0e3056adf4b3cb463f243c5dda48af5427fae48d05765cf",
     "manifest": "releases/dex/weight-converter.manifest.json",
     "source": "src/dex/weight-converter"
   }

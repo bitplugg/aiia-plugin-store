@@ -79,6 +79,9 @@ length-converter.dex
 length-converter.manifest.json
 ```
 
+Каталог также публикует `manifestSha256` для каждого `.dex`. AIIA скачивает
+sidecar вместе с DEX и проверяет оба хеша до загрузки в sandbox.
+
 ## Аргументы инструментов
 
 Большинство инструментов принимает JSON-объект `arguments`:

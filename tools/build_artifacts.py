@@ -124,6 +124,7 @@ def main() -> None:
             "minApiVersion": 1,
             "maxApiVersion": 1,
         }
+        manifest_hash = None
         if metadata["format"] == "aiip":
             target_dir = RELEASES / "aiip"
             target_dir.mkdir(parents=True, exist_ok=True)
@@ -140,6 +141,7 @@ def main() -> None:
             shutil.copy2(dex, target)
             sidecar = target_dir / f"{metadata['slug']}.manifest.json"
             sidecar.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            manifest_hash = file_sha256(sidecar)
             artifact = f"releases/dex/{target.name}"
         entries.append({
             "id": metadata["id"],
@@ -154,6 +156,7 @@ def main() -> None:
             "sha256": file_sha256(target),
             "sizeBytes": target.stat().st_size,
             "signerSha256": [],
+            "manifestSha256": manifest_hash,
             "manifest": f"releases/{metadata['format']}/{metadata['slug']}.manifest.json" if metadata["format"] == "dex" else None,
             "source": str(plugin_dir.relative_to(ROOT)),
         })
