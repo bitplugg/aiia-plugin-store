@@ -22,9 +22,16 @@ jobs:
           distribution: temurin
           java-version: '17'
       - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
-      - name: Install Android packages
-        run: sdkmanager "platforms;android-35" "build-tools;35.0.0"
+        run: |
+          SDK="${ANDROID_SDK_ROOT:-/usr/local/lib/android/sdk}"
+          echo "ANDROID_HOME=$SDK" >> "$GITHUB_ENV"
+          echo "ANDROID_SDK_ROOT=$SDK" >> "$GITHUB_ENV"
+          yes | sdkmanager --licenses >/dev/null || true
+          sdkmanager "platforms;android-35" "build-tools;35.0.0"
+      - name: Download compiler dependencies
+        run: |
+          tools/download_deps.sh
+          echo "AIIA_PLUGIN_LIB_DIR=$GITHUB_WORKSPACE/.ci-libs" >> "$GITHUB_ENV"
       - name: Generate plugin sources
         run: python3 tools/generate_sources.py
       - name: Build .aiip and .dex artifacts
@@ -67,9 +74,16 @@ jobs:
           distribution: temurin
           java-version: '17'
       - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
-      - name: Install Android packages
-        run: sdkmanager "platforms;android-35" "build-tools;35.0.0"
+        run: |
+          SDK="${ANDROID_SDK_ROOT:-/usr/local/lib/android/sdk}"
+          echo "ANDROID_HOME=$SDK" >> "$GITHUB_ENV"
+          echo "ANDROID_SDK_ROOT=$SDK" >> "$GITHUB_ENV"
+          yes | sdkmanager --licenses >/dev/null || true
+          sdkmanager "platforms;android-35" "build-tools;35.0.0"
+      - name: Download compiler dependencies
+        run: |
+          tools/download_deps.sh
+          echo "AIIA_PLUGIN_LIB_DIR=$GITHUB_WORKSPACE/.ci-libs" >> "$GITHUB_ENV"
       - name: Generate and build
         run: |
           python3 tools/generate_sources.py

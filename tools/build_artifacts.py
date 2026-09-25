@@ -26,18 +26,21 @@ def zip_write(archive: zipfile.ZipFile, name: str, data: bytes) -> None:
 
 
 def find_jar(name: str) -> Path:
+    external = Path(os.environ["AIIA_PLUGIN_LIB_DIR"]) / name if os.environ.get("AIIA_PLUGIN_LIB_DIR") else None
+    if external and external.is_file():
+        return external
     candidates = sorted(Path.home().glob(f".gradle/caches/modules-2/files-2.1/**/{name}"))
     if not candidates:
         raise RuntimeError(f"Gradle jar not found: {name}")
     return candidates[-1]
 
 
-def jar_from_cache(group: str, artifact: str, version: str) -> Path:
-    pattern = f".gradle/caches/modules-2/files-2.1/{group}/{artifact}/{version}/**/{artifact}-{version}.jar"
-    candidates = sorted(Path.home().glob(pattern))
-    if not candidates:
-        raise RuntimeError(f"Gradle jar not found: {group}:{artifact}:{version}")
-    return candidates[-1]
+def dependency_jars() -> list[Path]:
+    return [
+        find_jar("kotlin-stdlib-2.0.20.jar"),
+        find_jar("kotlinx-serialization-core-jvm-1.7.3.jar"),
+        find_jar("kotlinx-serialization-json-jvm-1.7.3.jar"),
+    ]
 
 
 def main() -> None:
@@ -54,8 +57,8 @@ def main() -> None:
     if not android_jar.is_file() or not d8.is_file():
         raise RuntimeError("Android SDK 35 and build-tools 35.0.0 are required")
 
-    kotlin = find_jar("kotlin-stdlib-2.0.20.jar")
-    serialization = find_jar("kotlinx-serialization-json-jvm-1.7.3.jar")
+    deps = dependency_jars()
+    dep_cp = ":".join(str(path) for path in deps)
     api_classes = BUILD / "api-classes"
     api_jar = BUILD / "api-stub.jar"
     common_classes = BUILD / "common-classes"
@@ -64,14 +67,14 @@ def main() -> None:
 
     api_sources = list((ROOT / "tools/api-stub/src").rglob("*.java"))
     run([
-        "javac", "--release", "17", "-cp", f"{kotlin}:{serialization}",
+        "javac", "--release", "17", "-cp", dep_cp,
         "-d", str(api_classes), *map(str, api_sources)
     ])
     run(["jar", "cf", str(api_jar), "-C", str(api_classes), "."])
 
     common_sources = list((ROOT / "tools/common/src").rglob("*.java"))
     run([
-        "javac", "--release", "17", "-cp", f"{api_jar}:{kotlin}:{serialization}",
+        "javac", "--release", "17", "-cp", f"{api_jar}:{dep_cp}",
         "-d", str(common_classes), *map(str, common_sources)
     ])
 
@@ -88,16 +91,16 @@ def main() -> None:
         dex_dir.mkdir(parents=True)
         run([
             "javac", "--release", "17",
-            "-cp", f"{api_jar}:{common_classes}:{kotlin}:{serialization}",
+            "-cp", f"{api_jar}:{common_classes}:{dep_cp}",
             "-d", str(classes), *map(str, source_files)
         ])
         jar = work / "plugin.jar"
         run(["jar", "cf", str(jar), "-C", str(classes), ".", "-C", str(common_classes), "."])
-        run([
-            str(d8), "--min-api", "29", "--lib", str(android_jar),
-            "--lib", str(kotlin), "--lib", str(serialization),
-            "--output", str(dex_dir), str(jar)
-        ])
+        d8_command = [str(d8), "--min-api", "29", "--lib", str(android_jar)]
+        for dependency in deps:
+            d8_command.extend(["--lib", str(dependency)])
+        d8_command.extend(["--output", str(dex_dir), str(jar)])
+        run(d8_command)
         dex = dex_dir / "classes.dex"
         if not dex.is_file():
             raise RuntimeError(f"D8 did not create {dex}")
