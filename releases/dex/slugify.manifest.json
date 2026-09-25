@@ -9,5 +9,8 @@
       "description": "Run this local tool after confirmation"
     }
   ],
-  "apiVersion": 1
+  "apiVersion": 1,
+  "schemaVersion": 1,
+  "minApiVersion": 1,
+  "maxApiVersion": 1
 }

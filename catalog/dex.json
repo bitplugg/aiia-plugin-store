@@ -9,6 +9,9 @@
     "tool": "contact_mask",
     "entryClass": "aiia.store.contact.ContactMaskPlugin",
     "artifact": "releases/dex/contact-mask.dex",
+    "sha256": "e8ab2f961933ae1f708f36fe9a74021c55e5c29f2ff590d317ee6864ea4134aa",
+    "sizeBytes": 13140,
+    "signerSha256": [],
     "manifest": "releases/dex/contact-mask.manifest.json",
     "source": "src/dex/contact-mask"
   },
@@ -22,6 +25,9 @@
     "tool": "length",
     "entryClass": "aiia.store.length.LengthConverterPlugin",
     "artifact": "releases/dex/length-converter.dex",
+    "sha256": "3b940b0ec77b8d23cf533f6726b1f27c26c41e94cf7f933aa57d2d6393c59256",
+    "sizeBytes": 13152,
+    "signerSha256": [],
     "manifest": "releases/dex/length-converter.manifest.json",
     "source": "src/dex/length-converter"
   },
@@ -35,6 +41,9 @@
     "tool": "markdown_clean",
     "entryClass": "aiia.store.markdown.MarkdownCleanerPlugin",
     "artifact": "releases/dex/markdown-cleaner.dex",
+    "sha256": "999fe301db8b266cbbd99f93ba5055277b59e3d6fb21b1f08c4f0be108d4b07e",
+    "sizeBytes": 13164,
+    "signerSha256": [],
     "manifest": "releases/dex/markdown-cleaner.manifest.json",
     "source": "src/dex/markdown-cleaner"
   },
@@ -48,6 +57,9 @@
     "tool": "number_stats",
     "entryClass": "aiia.store.number.NumberStatsPlugin",
     "artifact": "releases/dex/number-stats.dex",
+    "sha256": "cdd8f725d66a40b63bf29b55553749a9a1fd60da93b25fa0448ceff3e6fabb7f",
+    "sizeBytes": 13140,
+    "signerSha256": [],
     "manifest": "releases/dex/number-stats.manifest.json",
     "source": "src/dex/number-stats"
   },
@@ -61,6 +73,9 @@
     "tool": "password_generate",
     "entryClass": "aiia.store.password.PasswordGeneratorPlugin",
     "artifact": "releases/dex/password-generator.dex",
+    "sha256": "3e85cd22572e36ec5208eeb0b49f7c8fa0ade28869f32d28668b94b7cb25aa2a",
+    "sizeBytes": 13172,
+    "signerSha256": [],
     "manifest": "releases/dex/password-generator.manifest.json",
     "source": "src/dex/password-generator"
   },
@@ -74,6 +89,9 @@
     "tool": "random_choice",
     "entryClass": "aiia.store.random.RandomChoicePlugin",
     "artifact": "releases/dex/random-choice.dex",
+    "sha256": "ffefce8797de170724da2b7fc9694bbed461382aec2c322552ce0b64b3e408d5",
+    "sizeBytes": 13140,
+    "signerSha256": [],
     "manifest": "releases/dex/random-choice.manifest.json",
     "source": "src/dex/random-choice"
   },
@@ -87,6 +105,9 @@
     "tool": "slugify",
     "entryClass": "aiia.store.slugify.SlugifyPlugin",
     "artifact": "releases/dex/slugify.dex",
+    "sha256": "dfd0fc322a8e37d66c2942f87edd916fc8aa39b765c4e5f17903639e19004d57",
+    "sizeBytes": 13112,
+    "signerSha256": [],
     "manifest": "releases/dex/slugify.manifest.json",
     "source": "src/dex/slugify"
   },
@@ -100,6 +121,9 @@
     "tool": "temperature",
     "entryClass": "aiia.store.temperature.TemperatureConverterPlugin",
     "artifact": "releases/dex/temperature-converter.dex",
+    "sha256": "425e192028b918ad48a8c141011f9d6afe33dd747ab7b942fa62f08f1793f2e0",
+    "sizeBytes": 13188,
+    "signerSha256": [],
     "manifest": "releases/dex/temperature-converter.manifest.json",
     "source": "src/dex/temperature-converter"
   },
@@ -113,6 +137,9 @@
     "tool": "text_profile",
     "entryClass": "aiia.store.text.TextProfilePlugin",
     "artifact": "releases/dex/text-profile.dex",
+    "sha256": "97127f9bcaa14b6b98057234abac540e96fbd4e58bd84019d1da455cef531a2d",
+    "sizeBytes": 13144,
+    "signerSha256": [],
     "manifest": "releases/dex/text-profile.manifest.json",
     "source": "src/dex/text-profile"
   },
@@ -126,6 +153,9 @@
     "tool": "weight",
     "entryClass": "aiia.store.weight.WeightConverterPlugin",
     "artifact": "releases/dex/weight-converter.dex",
+    "sha256": "25d810637c184ec147b43625ed3e9efc2c411c2bbf76a6cb0f7d0e855c5b9ed4",
+    "sizeBytes": 13152,
+    "signerSha256": [],
     "manifest": "releases/dex/weight-converter.manifest.json",
     "source": "src/dex/weight-converter"
   }

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import shutil
@@ -23,6 +24,14 @@ def zip_write(archive: zipfile.ZipFile, name: str, data: bytes) -> None:
     info.compress_type = zipfile.ZIP_DEFLATED
     info.external_attr = 0o644 << 16
     archive.writestr(info, data)
+
+
+def file_sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for chunk in iter(lambda: stream.read(128 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
 
 
 def find_jar(name: str) -> Path:
@@ -111,6 +120,9 @@ def main() -> None:
             "entryClass": metadata["entryClass"],
             "permissions": [{"name": metadata["permission"], "description": "Run this local tool after confirmation"}],
             "apiVersion": 1,
+            "schemaVersion": 1,
+            "minApiVersion": 1,
+            "maxApiVersion": 1,
         }
         if metadata["format"] == "aiip":
             target_dir = RELEASES / "aiip"
@@ -139,6 +151,9 @@ def main() -> None:
             "tool": metadata["operation"],
             "entryClass": metadata["entryClass"],
             "artifact": artifact,
+            "sha256": file_sha256(target),
+            "sizeBytes": target.stat().st_size,
+            "signerSha256": [],
             "manifest": f"releases/{metadata['format']}/{metadata['slug']}.manifest.json" if metadata["format"] == "dex" else None,
             "source": str(plugin_dir.relative_to(ROOT)),
         })

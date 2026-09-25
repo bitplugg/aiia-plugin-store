@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import struct
 import sys
@@ -50,6 +51,11 @@ def main() -> None:
         if not artifact.is_file():
             fail(f"missing artifact {item['artifact']}")
         artifacts.append(artifact)
+        if not item.get("sha256") or len(item["sha256"]) != 64:
+            fail(f"missing sha256 for {item['slug']}")
+        actual_hash = hashlib.sha256(artifact.read_bytes()).hexdigest()
+        if actual_hash.lower() != item["sha256"].lower():
+            fail(f"sha256 mismatch for {item['slug']}")
         if item["format"] == "aiip":
             if artifact.suffix != ".aiip":
                 fail(f"wrong aiip extension: {artifact}")
