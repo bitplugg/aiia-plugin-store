@@ -1,0 +1,13 @@
+{
+  "id": "store.aiia.dex.weight-converter",
+  "name": "Weight Converter",
+  "version": "1.0.0",
+  "entryClass": "aiia.store.weight.WeightConverterPlugin",
+  "permissions": [
+    {
+      "name": "tool-call",
+      "description": "Run this local tool after confirmation"
+    }
+  ],
+  "apiVersion": 1
+}

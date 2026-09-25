@@ -1,0 +1,14 @@
+{
+  "slug": "hash-tool",
+  "format": "aiip",
+  "id": "store.aiia.aiip.hash-tool",
+  "name": "Hash Tool",
+  "version": "1.0.0",
+  "description": "Calculate a SHA-256 digest locally",
+  "package": "aiia.store.hashtool",
+  "class": "HashToolPlugin",
+  "entryClass": "aiia.store.hashtool.HashToolPlugin",
+  "operation": "sha256",
+  "argument": "text",
+  "permission": "tool-call"
+}

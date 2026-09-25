@@ -1,0 +1,14 @@
+{
+  "slug": "password-generator",
+  "format": "dex",
+  "id": "store.aiia.dex.password-generator",
+  "name": "Password Generator",
+  "version": "1.0.0",
+  "description": "Generate a local random password",
+  "package": "aiia.store.password",
+  "class": "PasswordGeneratorPlugin",
+  "entryClass": "aiia.store.password.PasswordGeneratorPlugin",
+  "operation": "password_generate",
+  "argument": "length",
+  "permission": "tool-call"
+}

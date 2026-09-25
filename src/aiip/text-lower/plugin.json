@@ -1,0 +1,14 @@
+{
+  "slug": "text-lower",
+  "format": "aiip",
+  "id": "store.aiia.aiip.text-lower",
+  "name": "Text Lower",
+  "version": "1.0.0",
+  "description": "Convert text to lower case",
+  "package": "aiia.store.textlower",
+  "class": "TextLowerPlugin",
+  "entryClass": "aiia.store.textlower.TextLowerPlugin",
+  "operation": "lowercase",
+  "argument": "text",
+  "permission": "tool-call"
+}

@@ -1,0 +1,14 @@
+{
+  "slug": "base64-codec",
+  "format": "aiip",
+  "id": "store.aiia.aiip.base64-codec",
+  "name": "Base64 Codec",
+  "version": "1.0.0",
+  "description": "Encode UTF-8 text as Base64",
+  "package": "aiia.store.base64codec",
+  "class": "Base64CodecPlugin",
+  "entryClass": "aiia.store.base64codec.Base64CodecPlugin",
+  "operation": "base64_encode",
+  "argument": "text",
+  "permission": "tool-call"
+}

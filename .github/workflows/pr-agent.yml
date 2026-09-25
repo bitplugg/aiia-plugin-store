@@ -1,0 +1,69 @@
+name: AIIA Plugin PR Agent
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  review:
+    name: Post PR checklist
+    runs-on: ubuntu-latest
+    steps:
+      - name: Inspect pull request metadata
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const marker = '<!-- aiia-plugin-pr-agent -->';
+            const pull = context.payload.pull_request;
+            const files = await github.paginate(github.rest.pulls.listFiles, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: pull.number,
+              per_page: 100
+            });
+            const pluginFiles = files.filter(file => /^(src|releases|catalog)\//.test(file.filename));
+            const workflowFiles = files.filter(file => file.filename.startsWith('.github/workflows/'));
+            const artifactFiles = files.filter(file => /^releases\/(aiip\/.*\.aiip|dex\/.*\.dex)$/.test(file.filename));
+            const lines = [
+              marker,
+              '### AIIA Plugin Store Agent',
+              '',
+              `PR: #${pull.number}`,
+              `Changed plugin/catalog files: **${pluginFiles.length}**`,
+              `Changed generated artifacts: **${artifactFiles.length}**`,
+              `Changed workflows: **${workflowFiles.length}**`,
+              '',
+              'The read-only build workflow validates:',
+              '- exactly 10 `.aiip` and 10 `.dex` artifacts;',
+              '- manifests, entry classes, permissions and DEX signatures;',
+              '- deterministic generated files in `src`, `releases` and `catalog`;',
+              '- Java/D8 compilation on Android API 35.',
+              '',
+              'No untrusted PR code is executed by this comment job. Please wait for the `Build AIIA Plugins` check before merging.'
+            ];
+            const comments = await github.paginate(github.rest.issues.listComments, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: pull.number,
+              per_page: 100
+            });
+            const previous = comments.find(comment => comment.body && comment.body.includes(marker));
+            if (previous) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: previous.id,
+                body: lines.join('\n')
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: pull.number,
+                body: lines.join('\n')
+              });
+            }

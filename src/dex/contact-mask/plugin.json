@@ -1,0 +1,14 @@
+{
+  "slug": "contact-mask",
+  "format": "dex",
+  "id": "store.aiia.dex.contact-mask",
+  "name": "Contact Mask",
+  "version": "1.0.0",
+  "description": "Mask an email or phone-like value",
+  "package": "aiia.store.contact",
+  "class": "ContactMaskPlugin",
+  "entryClass": "aiia.store.contact.ContactMaskPlugin",
+  "operation": "contact_mask",
+  "argument": "text",
+  "permission": "tool-call"
+}

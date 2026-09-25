@@ -1,0 +1,14 @@
+{
+  "slug": "text-profile",
+  "format": "dex",
+  "id": "store.aiia.dex.text-profile",
+  "name": "Text Profile",
+  "version": "1.0.0",
+  "description": "Count letters, digits, spaces and characters",
+  "package": "aiia.store.text",
+  "class": "TextProfilePlugin",
+  "entryClass": "aiia.store.text.TextProfilePlugin",
+  "operation": "text_profile",
+  "argument": "text",
+  "permission": "tool-call"
+}

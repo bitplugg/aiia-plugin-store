@@ -1,0 +1,14 @@
+{
+  "slug": "text-upper",
+  "format": "aiip",
+  "id": "store.aiia.aiip.text-upper",
+  "name": "Text Upper",
+  "version": "1.0.0",
+  "description": "Convert text to upper case",
+  "package": "aiia.store.textupper",
+  "class": "TextUpperPlugin",
+  "entryClass": "aiia.store.textupper.TextUpperPlugin",
+  "operation": "uppercase",
+  "argument": "text",
+  "permission": "tool-call"
+}

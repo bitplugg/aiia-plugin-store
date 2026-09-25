@@ -1,0 +1,14 @@
+{
+  "slug": "number-stats",
+  "format": "dex",
+  "id": "store.aiia.dex.number-stats",
+  "name": "Number Stats",
+  "version": "1.0.0",
+  "description": "Calculate count, min, max and average",
+  "package": "aiia.store.number",
+  "class": "NumberStatsPlugin",
+  "entryClass": "aiia.store.number.NumberStatsPlugin",
+  "operation": "number_stats",
+  "argument": "text",
+  "permission": "tool-call"
+}

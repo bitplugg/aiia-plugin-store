@@ -1,0 +1,14 @@
+{
+  "slug": "temperature-converter",
+  "format": "dex",
+  "id": "store.aiia.dex.temperature-converter",
+  "name": "Temperature Converter",
+  "version": "1.0.0",
+  "description": "Convert Celsius and Fahrenheit",
+  "package": "aiia.store.temperature",
+  "class": "TemperatureConverterPlugin",
+  "entryClass": "aiia.store.temperature.TemperatureConverterPlugin",
+  "operation": "temperature",
+  "argument": "value",
+  "permission": "tool-call"
+}

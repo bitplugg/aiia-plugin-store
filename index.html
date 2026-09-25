@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AIIA Plugin Store</title>
+  <style>
+    :root { color-scheme: dark; font-family: Inter, system-ui, sans-serif; background: #0d1117; color: #e6edf3; }
+    body { margin: 0; }
+    main { max-width: 1100px; margin: 0 auto; padding: 32px 20px 64px; }
+    h1 { margin-bottom: 8px; }
+    .muted { color: #8b949e; }
+    .toolbar { display: flex; gap: 8px; flex-wrap: wrap; margin: 24px 0; }
+    button, input { border: 1px solid #30363d; border-radius: 8px; background: #161b22; color: inherit; padding: 9px 12px; }
+    button.active { border-color: #2ea043; background: #1f6f2b; }
+    input { min-width: 240px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+    article { background: #161b22; border: 1px #30363d; border-radius: 12px; padding: 16px; }
+    article h2 { font-size: 18px; margin: 0 0 8px; }
+    article p { color: #b1b8c0; min-height: 42px; }
+    .tag { display: inline-block; border-radius: 999px; padding: 3px 8px; margin: 0 5px 8px 0; font-size: 12px; background: #21262d; }
+    .aiip { color: #bc8cff; }
+    .dex { color: #ffa657; }
+    a { color: #58a6ff; }
+    code { color: #79c0ff; }
+    #status { margin: 12px 0; color: #8b949e; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>AIIA Plugin Store</h1>
+  <div class="muted">10 .aiip packages · 10 .dex hot-reload plugins · <a href="https://github.com/bitplugg/ail0l">AIIA</a></div>
+  <div class="toolbar">
+    <input id="query" placeholder="Поиск плагина...">
+    <button class="active" data-filter="all">Все</button>
+    <button data-filter="aiip">.aiip</button>
+    <button data-filter="dex">.dex</button>
+  </div>
+  <div id="status">Загрузка каталога…</div>
+  <section id="grid" class="grid"></section>
+</main>
+<script>
+const grid = document.getElementById('grid');
+const status = document.getElementById('status');
+const query = document.getElementById('query');
+let filter = 'all';
+let plugins = [];
+function render() {
+  const q = query.value.trim().toLowerCase();
+  const visible = plugins.filter(p => (filter === 'all' || p.format === filter) && (!q || `${p.name} ${p.description} ${p.tool}`.toLowerCase().includes(q)));
+  status.textContent = `${visible.length} plugin(s)`;
+  grid.innerHTML = visible.map(p => `<article>
+    <span class="tag ${p.format}">.${p.format}</span><span class="tag">${p.tool}</span>
+    <h2>${p.name}</h2><p>${p.description}</p>
+    <a href="${p.artifact}">Download ${p.slug}.${p.format}</a>
+  </article>`).join('');
+}
+document.querySelectorAll('button[data-filter]').forEach(button => button.addEventListener('click', () => {
+  filter = button.dataset.filter;
+  document.querySelectorAll('button[data-filter]').forEach(item => item.classList.toggle('active', item === button));
+  render();
+}));
+query.addEventListener('input', render);
+fetch('catalog/catalog.json').then(response => response.json()).then(data => { plugins = data.plugins; render(); }).catch(error => { status.textContent = `Catalog error: ${error}`; });
+</script>
+</body>
+</html>

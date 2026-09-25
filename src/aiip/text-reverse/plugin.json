@@ -1,0 +1,14 @@
+{
+  "slug": "text-reverse",
+  "format": "aiip",
+  "id": "store.aiia.aiip.text-reverse",
+  "name": "Text Reverse",
+  "version": "1.0.0",
+  "description": "Reverse text without changing Unicode content",
+  "package": "aiia.store.textreverse",
+  "class": "TextReversePlugin",
+  "entryClass": "aiia.store.textreverse.TextReversePlugin",
+  "operation": "reverse",
+  "argument": "text",
+  "permission": "tool-call"
+}

@@ -1,0 +1,14 @@
+{
+  "slug": "weight-converter",
+  "format": "dex",
+  "id": "store.aiia.dex.weight-converter",
+  "name": "Weight Converter",
+  "version": "1.0.0",
+  "description": "Convert common weight units",
+  "package": "aiia.store.weight",
+  "class": "WeightConverterPlugin",
+  "entryClass": "aiia.store.weight.WeightConverterPlugin",
+  "operation": "weight",
+  "argument": "value",
+  "permission": "tool-call"
+}

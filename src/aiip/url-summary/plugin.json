@@ -1,0 +1,14 @@
+{
+  "slug": "url-summary",
+  "format": "aiip",
+  "id": "store.aiia.aiip.url-summary",
+  "name": "URL Summary",
+  "version": "1.0.0",
+  "description": "Inspect URL scheme, host, path and query",
+  "package": "aiia.store.urlsummary",
+  "class": "UrlSummaryPlugin",
+  "entryClass": "aiia.store.urlsummary.UrlSummaryPlugin",
+  "operation": "url_summary",
+  "argument": "text",
+  "permission": "tool-call"
+}

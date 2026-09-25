@@ -1,0 +1,14 @@
+{
+  "slug": "length-converter",
+  "format": "dex",
+  "id": "store.aiia.dex.length-converter",
+  "name": "Length Converter",
+  "version": "1.0.0",
+  "description": "Convert common length units",
+  "package": "aiia.store.length",
+  "class": "LengthConverterPlugin",
+  "entryClass": "aiia.store.length.LengthConverterPlugin",
+  "operation": "length",
+  "argument": "value",
+  "permission": "tool-call"
+}

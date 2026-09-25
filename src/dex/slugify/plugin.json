@@ -1,0 +1,14 @@
+{
+  "slug": "slugify",
+  "format": "dex",
+  "id": "store.aiia.dex.slugify",
+  "name": "Slugify",
+  "version": "1.0.0",
+  "description": "Create a URL-safe ASCII slug",
+  "package": "aiia.store.slugify",
+  "class": "SlugifyPlugin",
+  "entryClass": "aiia.store.slugify.SlugifyPlugin",
+  "operation": "slugify",
+  "argument": "text",
+  "permission": "tool-call"
+}

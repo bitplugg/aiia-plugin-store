@@ -1,0 +1,14 @@
+{
+  "slug": "word-count",
+  "format": "aiip",
+  "id": "store.aiia.aiip.word-count",
+  "name": "Word Count",
+  "version": "1.0.0",
+  "description": "Count words in plain text",
+  "package": "aiia.store.wordcount",
+  "class": "WordCountPlugin",
+  "entryClass": "aiia.store.wordcount.WordCountPlugin",
+  "operation": "word_count",
+  "argument": "text",
+  "permission": "tool-call"
+}

@@ -1,0 +1,14 @@
+{
+  "slug": "color-tool",
+  "format": "aiip",
+  "id": "store.aiia.aiip.color-tool",
+  "name": "Color Tool",
+  "version": "1.0.0",
+  "description": "Convert a six-digit hex color to RGB",
+  "package": "aiia.store.colortool",
+  "class": "ColorToolPlugin",
+  "entryClass": "aiia.store.colortool.ColorToolPlugin",
+  "operation": "color_hex",
+  "argument": "text",
+  "permission": "tool-call"
+}

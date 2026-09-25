@@ -1,0 +1,14 @@
+{
+  "slug": "markdown-cleaner",
+  "format": "dex",
+  "id": "store.aiia.dex.markdown-cleaner",
+  "name": "Markdown Cleaner",
+  "version": "1.0.0",
+  "description": "Remove common Markdown decorations",
+  "package": "aiia.store.markdown",
+  "class": "MarkdownCleanerPlugin",
+  "entryClass": "aiia.store.markdown.MarkdownCleanerPlugin",
+  "operation": "markdown_clean",
+  "argument": "text",
+  "permission": "tool-call"
+}

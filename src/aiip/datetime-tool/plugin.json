@@ -1,0 +1,14 @@
+{
+  "slug": "datetime-tool",
+  "format": "aiip",
+  "id": "store.aiia.aiip.datetime-tool",
+  "name": "Date Time",
+  "version": "1.0.0",
+  "description": "Convert Unix milliseconds to UTC ISO-8601",
+  "package": "aiia.store.datetimetool",
+  "class": "DateTimePlugin",
+  "entryClass": "aiia.store.datetimetool.DateTimePlugin",
+  "operation": "datetime",
+  "argument": "text",
+  "permission": "tool-call"
+}

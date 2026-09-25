@@ -1,0 +1,14 @@
+{
+  "slug": "json-summary",
+  "format": "aiip",
+  "id": "store.aiia.aiip.json-summary",
+  "name": "JSON Summary",
+  "version": "1.0.0",
+  "description": "Summarize a JSON document without uploading it",
+  "package": "aiia.store.jsonsummary",
+  "class": "JsonSummaryPlugin",
+  "entryClass": "aiia.store.jsonsummary.JsonSummaryPlugin",
+  "operation": "json_summary",
+  "argument": "text",
+  "permission": "tool-call"
+}

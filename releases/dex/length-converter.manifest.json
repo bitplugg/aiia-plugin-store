@@ -1,0 +1,13 @@
+{
+  "id": "store.aiia.dex.length-converter",
+  "name": "Length Converter",
+  "version": "1.0.0",
+  "entryClass": "aiia.store.length.LengthConverterPlugin",
+  "permissions": [
+    {
+      "name": "tool-call",
+      "description": "Run this local tool after confirmation"
+    }
+  ],
+  "apiVersion": 1
+}

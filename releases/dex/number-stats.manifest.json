@@ -1,0 +1,13 @@
+{
+  "id": "store.aiia.dex.number-stats",
+  "name": "Number Stats",
+  "version": "1.0.0",
+  "entryClass": "aiia.store.number.NumberStatsPlugin",
+  "permissions": [
+    {
+      "name": "tool-call",
+      "description": "Run this local tool after confirmation"
+    }
+  ],
+  "apiVersion": 1
+}
